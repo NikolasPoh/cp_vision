@@ -1,16 +1,16 @@
 <template lang="pug">
 .row.matchItem
-	.col-3
+	.col-12.col-md-12.col-lg-3
 		.form-group
 			label.boldText {{name}}
 			p.greyColor(ref="oldData") {{localField.name}}
-	.col-3
+	.col-12.col-md-12.col-lg-3
 		.form-group
 			p.greyColor(ref="newData") {{ localRekField.name ? localRekField.name : localField.name}}
-	.col-3
+	.col-12.col-md-12.col-lg-3
 		.form-group.position-relative
 			p.greyColor {{parser.name}}
-	.col-3
+	.col-12.col-md-12.col-lg-3
 		.matchControls
 			ul.d-flex
 				li.finalStatus(:class="result.status") {{result.text}}

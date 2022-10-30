@@ -1,7 +1,10 @@
 <template lang="pug">
 .container
-	.form-group
-		router-link.btn(to="/load") Загрузить данные
+	.d-flex
+		.form-group
+			router-link.btnSecondary(to="/load") Загрузить данные
+		.form-group
+			router-link.btnSecondary.ms-2(to="/parser") Парсинг сайта
 	.companySearch
 		.form-group
 			input.form-control(type="search" v-model="search" @change="$_vision_index_searchCompany" placeholder="Поиск по названию или ID")
@@ -56,7 +59,6 @@
 			},
 			async $_vision_index_loadCompany(){
 				const res = await this.$store.getters.request('GET', 'company/all/'+this.lazyCount, {})
-				console.log(res)
 				if(!res.err){
 					this.lazyCount = res.data[res.data.length-1].id
 					if(res.data.filter(item => item.duble !== null).length <= 0){
@@ -80,6 +82,7 @@
 				} else {
 					this.noSearch = false
 					this.lazyCount = 0
+					this.companies = []
 					this.$_vision_index_loadCompany()
 				}
 

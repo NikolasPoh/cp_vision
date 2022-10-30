@@ -32,7 +32,7 @@
 		.col-3.col-md-3.d-flex.justify-content-end.align-content-center
 			b.showMore
 				router-link(:to="'/company/'+company.id" v-if="!company.id_company") Подробнее
-				router-link(:to="'/product/'+company.id" v-else) Подробнее
+				router-link(to="#" v-else) Подробнее
 			img.arrowLink(src="@/assets/images/arrowLink.svg")
 	hr
 </template>

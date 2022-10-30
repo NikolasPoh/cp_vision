@@ -29,3 +29,9 @@
 .companyResult{
     display: flex;
 }
+
+@media(max-width: 992px){
+    .matchItem{
+        padding: 15px 12px;
+    }
+}
