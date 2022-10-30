@@ -1,11 +1,13 @@
 const Joi = require('joi');
 const natural = require('natural');
 const xlsx = require("node-xlsx");
+const {required} = require("joi");
 const tokenizer = new natural.AggressiveTokenizerRu();
 const normalize=(text)=>{
     const words=tokenizer.tokenize(text.toLowerCase()).filter(w=>w.length>3).map(w=>natural.PorterStemmerRu.stem(w))//нормализую (убираю оканчания привожу в именительный падеж убираю короткие слова)
     return [...new Set(words)]//убираю дубли
 }
+const rp = require('request-promise');
 exports.plugin = {
     name: 'table',
     version: '0.0.1',
@@ -256,9 +258,9 @@ exports.plugin = {
                                 if(name===company[5]) data[5]=t.id;
                                 if(name===company[6]) data[6]=t.id;
                             })
+                            const description=normalize(data[8]).join(" ")
                             await new Promise((res)=>{
                                 natural.BayesClassifier.load('../nlp/classifierIndustries.json', natural.PorterStemmerRu, function(err, classifier) {
-                                    const description=normalize(data[8]).join(" ")
                                     const rec=classifier.classify(description)
                                     if(rec*1===data[3]*1) countTrueIndustries++
                                     res()
@@ -266,7 +268,6 @@ exports.plugin = {
                             })
                             await new Promise((res)=>{
                                 natural.BayesClassifier.load('../nlp/classifierTechnology.json', natural.PorterStemmerRu, function(err, classifier) {
-                                    const description=normalize(data[8]).join(" ")
                                     const rec=classifier.classify(description)
                                     if(rec*1===data[6]*1) countTrueTechnology++
                                     res()
@@ -285,6 +286,56 @@ exports.plugin = {
                 multipart: true
             }
         }
+
     })
+        server.route({
+            method: 'POST',
+            path: '/parser',
+            options: {
+                async handler(req) {
+                    const url = req.payload.url||""
+                    const html=(await rp(url)).replace(/[^а-яА-Я ]/g, "").split(" ").filter(w=>w.length>0).join(" ")
+                    const description=normalize(html).join(" ")
+                    let arrI=[],arrT=[]
+                    const [[ind],[tech]] =await Promise.all([
+                        pool.query(`SELECT * FROM list_industries`),
+                        pool.query(`SELECT * FROM list_technology`)
+                    ]);
+                    const check_id_parent=(id,ar,array=[])=>{
+                        for(let i of ar){
+                            if(i.id===id) {
+                                array.push(i)
+                                if(i.parent!==0)array=array.concat(check_id_parent(i.parent,ar))
+                                break
+                            }
+                        }
+                        return array
+                    }
+                    const recI=await new Promise((res)=>{
+                        natural.BayesClassifier.load('../nlp/classifierIndustries.json', natural.PorterStemmerRu, function(err, classifier) {
+                            const rec=classifier.classify(description)
+                            res(rec)
+                        });
+                    })
+                    const recT=await new Promise((res)=>{
+                        natural.BayesClassifier.load('../nlp/classifierTechnology.json', natural.PorterStemmerRu, function(err, classifier) {
+                            const rec=classifier.classify(description)
+                            res(rec)
+                        });
+                    })
+                    arrI=check_id_parent(recI*1,ind).sort((a,b)=>a.parent-b.parent)
+                    arrT=check_id_parent(recT*1,tech).sort((a,b)=>a.parent-b.parent)
+                    return {err:false,html,arrI,arrT}
+                },
+                description: 'Загрузка и обработка файла',
+                tags: ['api','table'],
+                validate:{
+                    payload: Joi.object({
+                        url:Joi.string().required()
+                    })
+                }
+            }
+
+        })
 }
 }

@@ -24,7 +24,7 @@ const crawler = new PlaywrightCrawler({
     maxRequestsPerCrawl: 1,
 });
 const start=async ()=>{
-    let [rows]=await pool.query(`SELECT id,id_sub_ind,id_tech_3,site FROM companies WHERE ISNULL(id_parser_tech_3)`)
+    let [rows]=await pool.query(`SELECT id,id_sub_ind,id_tech_3,site FROM companies WHERE ISNULL(id_parser_tech_3) OR id_parser_tech_3=90`)
     for(let row of rows){
         titleAll=[]
         await crawler.run([row.site]);
@@ -35,13 +35,13 @@ const start=async ()=>{
         }
         await new Promise((res)=>{
             natural.BayesClassifier.load('../nlp/classifierIndustries.json', natural.PorterStemmerRu, async function(err, classifier) {
-            const description=normalize(titleAll.join(" ")).join(" ")
-            const rec=classifier.classify(description)
-            if(row.id_sub_ind!==rec*1){
-                await pool.query(`UPDATE companies
-		            SET id_parser_sub_ind = ${rec} WHERE id=${row.id}`)
-            }
-            res();
+                const description=normalize(titleAll.join(" ")).join(" ")
+                const rec=classifier.classify(description)
+                if(row.id_sub_ind!==rec*1){
+                    await pool.query(`UPDATE companies
+                        SET id_parser_sub_ind = ${rec} WHERE id=${row.id}`)
+                }
+                res();
         })})
         await new Promise((res)=>{
             natural.BayesClassifier.load('../nlp/classifierTechnology.json', natural.PorterStemmerRu, async function(err, classifier) {
@@ -51,8 +51,8 @@ const start=async ()=>{
                     await pool.query(`UPDATE companies
 					    SET id_parser_tech_3 = ${rec} WHERE id=${row.id}`)
                 }
+                res();
             })
-            res();
         })
     }
     await Actor.exit();
