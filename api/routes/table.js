@@ -65,7 +65,8 @@ exports.plugin = {
                     try {
                         const {id}=req.params
                         const [data] = await pool.query(`SELECT C.id,C.name,
-                            (SELECT GROUP_CONCAT(S.id) FROM companies S WHERE S.name=C.name AND S.is_duplicated=1) AS duble
+                            (SELECT GROUP_CONCAT(S.id) FROM companies S WHERE S.name=C.name AND S.is_duplicated=1) AS duble,
+                            if(C.id_rek_sub_ind,true,false) AS rek_sub, if(C.id_rek_tech_3,true,false) AS rek_tech
                             FROM companies C WHERE C.id>${id} AND C.is_duplicated<>1 LIMIT 20`);
                         return {err:false, data}
                     } catch (err) {
@@ -163,7 +164,8 @@ exports.plugin = {
                         const {id}=req.params;
                         const {search}=req.payload;
                         const [data] = await pool.query(`SELECT C.id,C.name,(SELECT GROUP_CONCAT(S.id) FROM companies S 
-                            WHERE S.name=C.name AND S.is_duplicated=1) AS duble FROM companies C 
+                            WHERE S.name=C.name AND S.is_duplicated=1) AS duble,
+                            if(C.id_rek_sub_ind,true,false) AS rek_sub, if(C.id_rek_tech_3,true,false) AS rek_tech FROM companies C 
                             WHERE C.id>${id} AND C.is_duplicated<>1 AND (C.id='${search}' OR C.name LIKE '%${search}%') LIMIT 20`);
                         return {err:false, data}
                     } catch (err) {

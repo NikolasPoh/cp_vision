@@ -1,0 +1,42 @@
+{
+	"modules": {},
+	"server": {
+		"host": "localhost",
+		"port": 3000
+	},
+	"laabr": {
+		"formats": {
+			"onPostStart": ":time[utc] :start :level :message" ,
+			"log":":time[utc] :level :message",
+			"request":":time[utc] :level :message",
+			"response":":time[utc] :method :remoteAddress :url :status (:responseTime ms)",
+			"request-error":":time[utc] :level :error"
+		},
+		"tokens": {
+			"start":""
+		},
+		"indent": 0
+	},
+	"mySQL" : {
+		"settings": {
+			"connectionLimit" : 10,
+			"host": "62.113.100.29",
+			"database": "default-db",
+			"user":"convert",
+			"password": "Convert123ME!2"
+		},
+		"decorate": true
+	},
+	"swagger": {
+		"info": {
+			"title": "API",
+			"version": "0.0.1"
+		},
+		"tags":[
+			{
+				"name":"api",
+				"description":"Все команды"
+			}
+		]
+	}
+}

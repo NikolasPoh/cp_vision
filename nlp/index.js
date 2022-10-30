@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 const pool = mysql.createPool({
-	host: 'ochfonkunem.beget.app',
-	user: 'default-db',
+	host: '62.113.100.29',
+	user: 'convert',
 	database: 'default-db',
-	password:'m2Y2BjzDL%ky',
+	password:'Convert123ME!2',
 	waitForConnections: true,
 	connectionLimit: 10,
 	queueLimit: 0
