@@ -5,16 +5,11 @@
 	.companySearch
 		.form-group
 			input.form-control(type="search" v-model="search" @change="$_vision_index_searchCompany" placeholder="Поиск по названию или ID")
-	.companyTabs.row.gx-2
-		.col-6
-			button.btnSecondary.w-100(@click="tab=0") Компании с несоответствиями
-		.col-6
-			button.btnSecondary.w-100(@click="tab=1") Правильные компании
 	.contentTabs
-		.contentTabMistake(v-if="!tab")
+		.contentTabMistake
 			.companyResult
 				.notifError Всего компаний с несоответствиями найдено: {{lengthDouble.duble}}
-				//button.btnSecondary Исправить все записи
+				.notifSuccess.ms-3 Всего компаний: {{lengthDouble.orig}}
 			.companyListMain.row.g-2
 				h1 Список компаний
 				.companyListHead.row
@@ -22,16 +17,12 @@
 					.companyTitleList.col-12.col-md-8 Наименование поддержаной компании
 				.companyList.col-12(v-for="comp in companies")
 					VisitorCompanyCard(:company="comp" :double="true" v-if="comp.duble")
-		.contentTabMistake(v-if="tab")
+					VisitorCompanyCard(:company="comp" v-else)
+				.companyList.col-12.text-center.mt-5(v-if="noSearch")
+					h1 Поиск не дал результатов
+		.contentTabMistake
 			.companyResult.mt-5
-				.notifSuccess Всего компаний: {{lengthDouble.orig}}
-			.companyListMain.row.g-2
-				h1 Список компаний
-				.companyListHead.row
-					.companyTitleList.col-12.col-md-3 global_id
-					.companyTitleList.col-12.col-md-8 Наименование поддержаной компании
-				.companyList.col-12(v-for="comp in companies")
-					VisitorCompanyCard(:company="comp" v-if="!comp.duble")
+
 	button.btn(@click="$_vision_index_loadCompany()") Загрузить ещё
 </template>
 
@@ -48,6 +39,7 @@
 				companies: [],
 				lazyCount: 0,
 				lazyCountSearch: 0,
+				noSearch: false
 			}
 		},
 		mounted() {
@@ -64,6 +56,7 @@
 			},
 			async $_vision_index_loadCompany(){
 				const res = await this.$store.getters.request('GET', 'company/all/'+this.lazyCount, {})
+				console.log(res)
 				if(!res.err){
 					this.lazyCount = res.data[res.data.length-1].id
 					if(res.data.filter(item => item.duble !== null).length <= 0){
@@ -80,9 +73,15 @@
 					const res = await this.$store.getters.request('POST', 'company/'+this.lazyCountSearch, {search: this.search})
 					if(!res.err){
 						// this.lazyCountSearch = res.data[res.data.length-1].id
-						this.companies = this.companies.concat(res.data)
+						if(res.data.length){
+							this.companies = this.companies.concat(res.data)
+						} else this.noSearch = true
 					}
-				} else this.$_vision_index_loadCompany()
+				} else {
+					this.noSearch = false
+					this.lazyCount = 0
+					this.$_vision_index_loadCompany()
+				}
 
 			}
 

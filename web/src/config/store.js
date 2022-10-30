@@ -4,7 +4,7 @@ import axios from "axios"
 const store = createStore({
     state(){
         return {
-            url_api: 'https://192.168.1.51:3000/'
+            url_api: 'http://62.113.100.29:3000/'
             // url_api: process.env.VUE_APP_SERVER
         }
     },

@@ -3,7 +3,8 @@
 	.companyCard.collapsed.row(data-bs-toggle="collapse" :data-bs-target="'#collapse-1-'+company.id")
 		.companyId.col-12.col-md-3
 		.companyName.col-11.col-md-8 {{company.name}}
-			b  (Найдены дубликаты)
+			b.redColor(v-if="company.rek_sub || company.rek_tech")  (Есть несоответствия)
+			b.redColor  (Найдены дубликаты)
 		.col-1.arrowCollapse
 			img(src="@/assets/images/arrowCollapse.svg")
 	hr
@@ -27,6 +28,7 @@
 	.companyCardMatched.row
 		.companyId.col-12.col-md-3 ID: {{company.id}}
 		.companyName.col-9.col-md-6 {{company.name}}
+			b.redColor(v-if="company.rek_sub || company.rek_tech")  (Есть несоответствия)
 		.col-3.col-md-3.d-flex.justify-content-end.align-content-center
 			b.showMore
 				router-link(:to="'/company/'+company.id" v-if="!company.id_company") Подробнее
