@@ -1,10 +1,10 @@
 <template lang="pug">
 .container
-	.d-flex
+	.d-flex.flex-wrap.w-100
 		.form-group
-			router-link.btnSecondary(to="/load") Загрузить данные
+			router-link.btnSecondary.w-100(to="/load") Загрузить данные
 		.form-group
-			router-link.btnSecondary.ms-2(to="/parser") Парсинг сайта
+			router-link.btnSecondary.ms-2.w-100(to="/parser") Парсинг сайта
 	.companySearch
 		.form-group
 			input.form-control(type="search" v-model="search" @change="$_vision_index_searchCompany" placeholder="Поиск по названию или ID")
