@@ -26,3 +26,6 @@
 .companyProducts{
     margin-top: 40px;
 }
+.companyResult{
+    display: flex;
+}

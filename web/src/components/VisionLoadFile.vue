@@ -5,6 +5,7 @@
 			.loadMain
 				h3 Загрузить файл
 				p Формат файла .xlsx
+				a.btn.w-100.text-center.mb-3(href="/CompanyExample.xlsx" download) Скачать пример файла
 				label.btnSecondary.w-100.text-center(for="fileLoad") Загрузить файл
 				input.d-none#fileLoad(type="file" @change="$_vision_load_getFile")
 		.d-flex.justify-content-center.mt-5(v-if="spinner")

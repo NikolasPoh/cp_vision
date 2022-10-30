@@ -1,35 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b36d1ec-5a4a-4abd-a64d-7d4ddde2fe24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/_colors.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/_helpers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/_componentsIndex.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/_header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/_loadFile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/additional/_buttons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/additional/_inputs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/additional/_notifications.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/company/_companyCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/components/plugins/v-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/arrowCollapse.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/arrowLink.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/cancel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/check.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/info.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/assets/images/restore.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/VisionHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/VisionIndex.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/VisionLoadFile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/company/VisionCompanyCard.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/company/VisionCompanyIndex.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/components/company/VisitorCompanyMatchItem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/config/router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/config/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/config/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/env.development" afterDir="false" />
+    <list default="true" id="0b36d1ec-5a4a-4abd-a64d-7d4ddde2fe24" name="Changes" comment="Add Fontend">
+      <change afterPath="$PROJECT_DIR$/web/public/CompanyExample.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/assets/css/components/company/_companyIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/css/components/company/_companyIndex.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/VisionIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/VisionIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/VisionLoadFile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/VisionLoadFile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/company/VisionCompanyCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/company/VisionCompanyCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/config/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/config/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +49,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\public" />
       <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\src\assets\images" />
       <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\src\assets\css\components\company" />
       <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\src\assets\css\components" />
       <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\src\assets" />
-      <recent name="C:\Users\ConvertAdmin\WebstormProjects\cp_vision\web\src\css" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,8 +83,16 @@
       <updated>1667023473055</updated>
       <workItem from="1667023476452" duration="221000" />
       <workItem from="1667023699644" duration="18000" />
-      <workItem from="1667023844891" duration="69433000" />
+      <workItem from="1667023844891" duration="72322000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Fontend">
+      <created>1667103485521</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667103485521</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,5 +108,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Fontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Fontend" />
   </component>
 </project>
