@@ -1,0 +1,12 @@
+.customHeader{
+    background: #181A4F;
+    color: #fff;
+    padding: 20px;
+}
+.customHeader .container{
+    justify-content: center;
+}
+.navbarBrand{
+   font-size: 20px;
+    font-weight: 600;
+}

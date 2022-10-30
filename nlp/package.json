@@ -1,0 +1,8 @@
+{
+  "name": "nlp",
+  "version": "1.0.0",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "natural": "^5.2.3"
+  }
+}

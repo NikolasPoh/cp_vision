@@ -1,0 +1,19 @@
+.notifError, .notifSuccess, .notifWarn{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.notifError{
+    background: rgba(227, 63, 63, 0.15);
+    color: #E33F3F;
+}
+.notifSuccess{
+    background: rgba(63, 227, 148, 0.15);
+    color: #3FE394;
+}
+.notifWarn{
+    background: rgba(227, 220, 63, 0.15);
+    color: #E3DC3F;
+}

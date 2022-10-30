@@ -1,0 +1,18 @@
+:root{
+    --background: #06081F;
+    --elBg: #181A4F;
+    --linkColor: #9A89FF;
+    --greyColor: #AAAAAA;
+
+
+    /* buttons */
+    --btnBg: #070820;
+    --btnColor: #fff;
+
+    /* label */
+    --labelColor: #B5BCCE;
+
+    /* inputs */
+    --inpPlaceholder: #CFCDE8;
+    --inpBg: #070820;
+}

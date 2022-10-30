@@ -1,0 +1,13 @@
+/api/node_modules/
+/api/package-lock.json
+/api/config/
+/.idea/
+/parser/package-lock.json
+/export/node_modules/
+/export/package-lock.json
+/export/dataset/.~lock.technology.xlsx#
+/parser/node_modules/
+/nlp/node_modules/
+/export/dataset/.~lock.company.xlsx#
+/export/dataset/.~lock.product.xlsx#
+/nlp/package-lock.json

@@ -1,0 +1,41 @@
+@import "_colors.css";
+@import "_helpers.css";
+
+/* components */
+@import "components/_componentsIndex.css";
+
+/* additional */
+@import "components/additional/_buttons.css";
+@import "components/additional/_inputs.css";
+@import "components/additional/_notifications.css";
+
+/* plugins */
+@import "components/plugins/v-select.css";
+
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #ffffff;
+    /*color: #2c3e50;*/
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+}
+main{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+a{
+    text-decoration: none;
+    color: var(--linkColor);
+}
+hr{
+    width: 100%;
+}
+.container-fluid{
+    max-width: 1440px;
+}

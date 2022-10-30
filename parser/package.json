@@ -1,0 +1,19 @@
+{
+  "name": "cp_vision",
+  "author": "Nikolas_Poh",
+  "description": "cp_vision",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "apify": "^3.1.0",
+    "crawlee": "^3.1.0",
+    "mysql2": "^2.3.3",
+    "natural": "^5.2.3",
+    "playwright": "^1.27.1",
+    "puppeteer": "^5.3.1"
+  }
+}
