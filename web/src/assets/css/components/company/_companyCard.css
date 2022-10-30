@@ -1,0 +1,102 @@
+.companyCard, .companyCardMatched{
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+.companyCard{
+    background: #252739;
+}
+.companyCard .arrowCollapse{
+    display: flex;
+    justify-content: end;
+}
+.companyCard .arrowCollapse img{
+    height: 5px;
+    transition: transform .5s ease;
+    transform: rotate(-180deg);
+}
+.companyCard.collapsed{
+    background: none;
+}
+.companyCard.collapsed:hover{
+    background: #252739;
+}
+.companyCard.collapsed .arrowCollapse img{
+    transform: rotate(0);
+}
+/* collapse item */
+.companyCardMatched{
+    min-height: 60px;
+}
+.companyCardMatched:hover{
+    background: #252739;
+}
+.companyCardMatched .showMore{
+    opacity: 0;
+    color: #9A89FF;
+    margin-right: 10px;
+    transition: opacity .15s ease;
+}
+.companyCardMatched .arrowLink{
+    transition: filter .15s ease;
+    filter: brightness(2);
+}
+.companyCardMatched:hover .showMore{
+    opacity: 1;
+}
+.companyCardMatched:hover .arrowLink{
+    filter: brightness(1);
+}
+
+.companyCardMain{
+    width: 100%;
+    min-height: 65px;
+}
+
+.matchItem{
+    padding: 0 12px;
+}
+.matchItem:nth-child(2n){
+    background: rgba(255, 255, 255, .1);
+}
+.matchItem ul{
+    padding-left: 0;
+}
+.matchControls{
+    height: 100%;
+}
+.matchControls ul{
+    align-items: center;
+    margin-bottom: 0;
+    height: 100%;
+}
+.matchControls button{
+    margin: 0 5px;
+}
+.finalStatus.good{
+    color: #fff;
+}
+.finalStatus.error{
+    color: #E54F2E;
+}
+.finalStatus.check{
+    color: #E3BF3F;
+}
+.change{
+    animation: change 2s ease;
+}
+@keyframes change {
+    0% {
+        color: #fff;
+    }
+    50%{
+        color: #3FE394;
+    }
+    100%{
+        color: #fff;
+    }
+}

@@ -1,0 +1,19 @@
+input.form-control{
+    background: var(--inpBg);
+    border: 1px solid #272140;
+    border-radius: 12px;
+    height: 52px;
+    color: #fff;
+}
+input.form-control:focus{
+    background: var(--inpBg);
+    color: #fff;
+}
+::placeholder {
+    color: var(--inpPlaceholder);
+}
+
+label.form-label{
+    font-size: 13px;
+    color: var(--labelColor);
+}

@@ -1,0 +1,9 @@
+.loadMain, .loadResult{
+    background: radial-gradient(63.01% 52.75% at 50% 50%, #111330 0%, #06081F 100%);
+    border-radius: 16px;
+    padding: 20px;
+    border: solid 1px rgba(255,255,255,.1);
+}
+.loadResult{
+    font-size: 36px;
+}

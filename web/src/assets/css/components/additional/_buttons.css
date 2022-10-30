@@ -1,0 +1,55 @@
+.btn{
+    background: var(--btnBg);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 13px 48px;
+    border: solid 1px rgba(255, 255, 255, .1);
+    cursor: pointer;
+    transition: border .13s ease;
+}
+.btn:hover{
+    border: solid 1px rgba(255, 255, 255, 1);
+}
+
+.btnSecondary{
+    background:  rgba(81, 55, 235, 1);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 13px 48px;
+    cursor: pointer;
+    border: none;
+    transition: background .15s ease;
+}
+.btnSecondary:hover{
+    background: rgba(81, 55, 235, .3);
+}
+.btnCheck, .btnCancel{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btnCheck{
+    background: rgba(63, 227, 148, 0.1);
+    border: 1px solid rgba(63, 227, 148, 0.4);
+}
+.btnCheck:hover{
+    background: #3FE394;
+}
+.btnCheck:hover img{
+    filter: brightness(0);
+}
+.btnCancel{
+    background: rgba(229, 79, 46, 0.1);
+    border: 1px solid rgba(229, 79, 46, 0.4);
+}
+.btnCancel:hover{
+    background: #E54F2E;
+}
+.btnCancel:hover img{
+    filter: brightness(2);
+}

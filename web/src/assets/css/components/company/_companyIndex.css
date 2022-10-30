@@ -1,0 +1,28 @@
+@import "_companyCard.css";
+
+.companyList{
+    margin-top: 0;
+}
+.companyTabs{
+    margin: 40px 0;
+}
+.companyListMain{
+    padding-top: 40px;
+}
+.companyTitleList{
+    font-weight: 600;
+}
+.matchHead{
+    display: flex;
+    margin-bottom: 30px;
+}
+.matchTitles{
+    background: rgba(255, 255, 255, .1);
+    padding: 12px;
+}
+.matchHead .notifWarn{
+    margin-left: 30px;
+}
+.companyProducts{
+    margin-top: 40px;
+}

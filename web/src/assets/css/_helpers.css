@@ -1,0 +1,15 @@
+.smallText{
+    font-size: 12px;
+}
+.greyColor{
+    color: var(--greyColor);
+}
+.redColor{
+    color: #E54F2E;
+}
+.form-group{
+    margin: 15px 0;
+}
+.boldText{
+    font-weight: 600;
+}
