@@ -1,4 +1,4 @@
-# cp_vision (hack-ai)
+# cp_vision
 
 
 Папка api - back-end сайта
