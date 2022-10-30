@@ -1,5 +1,9 @@
 <template lang="pug">
 .container
+	.form-group.linkBack
+		router-link(to="/")
+			img.me-2(src="@/assets/images/back.svg")
+			| Главная
 	.row
 		.col-12.d-flex.justify-content-center
 			.loadMain

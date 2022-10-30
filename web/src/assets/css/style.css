@@ -9,10 +9,6 @@
 @import "components/additional/_inputs.css";
 @import "components/additional/_notifications.css";
 
-/* plugins */
-@import "components/plugins/v-select.css";
-
-
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -38,4 +34,10 @@ hr{
 }
 .container-fluid{
     max-width: 1440px;
+}
+.linkBack a{
+    font-size: 18px;
+}
+.loadResultParse{
+    font-size: 16px;
 }

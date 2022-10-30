@@ -1,5 +1,9 @@
 <template lang="pug">
 .container-fluid
+	.form-group.linkBack
+		router-link(to="/")
+			img.me-2(src="@/assets/images/back.svg")
+			| Назад
 	.companyPageMain.row
 		.col-12.col-md-4
 			.companyPageInfo
